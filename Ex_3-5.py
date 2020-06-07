@@ -33,6 +33,11 @@ def do_four(f):
     do_twice(f)
     do_twice(f)
 
+def one_four_one(f,g,h):
+    f()
+    do_four(g)
+    h()
+
 def print_plus():
     print('+', end='')
 def print_dash():
@@ -45,3 +50,18 @@ def print_end():
     print()
 def nothing():
     "do nothing"
+
+def print_1beam():
+    one_four_one(nothing,print_dash,print_plus)
+def print_1post():
+    one_four_one(nothing,print_space,print_bar)
+
+def print_4beam():
+    one_four_one(print_plus,print_1beam,print_end)
+def print_4post():
+    one_four_one(print_bar,print_1post,print_end)
+def print_row():
+    one_four_one(nothing,print_4post,print_4beam)
+def print_grid():
+    one_four_one(print_4beam,print_row,print_end)
+print_grid()
