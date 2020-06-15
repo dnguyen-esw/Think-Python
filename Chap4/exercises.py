@@ -41,6 +41,8 @@ def polygon2(t, n, length):
     angle=360.0/n
     polyline(t, n, length, angle)
 def arc(t,r,angle):
+    """Draw a circle with a fraction
+    """
     arc_length = 2*pi*r*angle/360
     n = int(arc_length/3)+1
     step_length=arc_length/n
@@ -48,6 +50,7 @@ def arc(t,r,angle):
     polyline(t, n, step_length, step_angle)
 def circle2(t, r):
     arc(t, r, 360)
+
 arc(bob,10, 180)
 #circle2(bob,20)
 
