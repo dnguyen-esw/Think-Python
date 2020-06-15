@@ -8,12 +8,14 @@ def polyline(t, n, length, angle):
     for i in range(n):
         fd(t, length)
         lt(t, angle)
+
 def polygon(t, n, length):
     """ Draws a polygon n sides with the given length.
     t is a turtle.
     """
     angle=360.0/n
     polyline(t, n, length, angle)
+
 def arc(t,r,angle):
     """Draws an arc with the given radius and angle.
 
@@ -21,11 +23,14 @@ def arc(t,r,angle):
     r: radius
     angle: angle subtended by the arc, in degrees
     """
-    arc_length = 2*pi*r*angle/360
-    n = int(arc_length/3)+1
+    arc_length = 2*pi*r*abs(angle)/360
+    n = int(arc_length/4)+1
     step_length=arc_length/n
     step_angle=float(angle)/n
+    lt(t, step_angle/2)
     polyline(t, n, step_length, step_angle)
+    rt(t, step_angle/2)
+
 def circle(t, r):
     """Draws a circle with the given radius.
 
@@ -33,6 +38,7 @@ def circle(t, r):
     r: radius
     """
     arc(t, r, 360)
+
 if __name__ == '__main__':
     world = TurtleWorld()    
 
