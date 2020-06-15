@@ -32,15 +32,23 @@ def circle(t,r):
     polygon(t,n,length)    
 #circle(bob,50)
 
+#5
+def polyline(t, n, length, angle):
+    for i in range(n):
+        fd(t, length)
+        lt(t, angle)
+def polygon2(t, n, length):
+    angle=360.0/n
+    polyline(t, n, length, angle)
 def arc(t,r,angle):
     arc_length = 2*pi*r*angle/360
     n = int(arc_length/3)+1
     step_length=arc_length/n
     step_angle=float(angle)/n
-
-    for i in range(n):
-        fd(t, step_length)
-        lt(t, step_angle)
-arc(bob,70,90)
+    polyline(t, n, step_length, step_angle)
+def circle2(t, r):
+    arc(t, r, 360)
+arc(bob,10, 180)
+#circle2(bob,20)
 
 wait_for_user()
