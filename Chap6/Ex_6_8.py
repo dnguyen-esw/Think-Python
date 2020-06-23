@@ -6,4 +6,4 @@ def GCD(a, b):
         return a
     else:
         return GCD(b, a%b)
-print(GCD(0,0))
+print(GCD(9,15))
