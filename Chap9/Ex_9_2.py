@@ -13,7 +13,7 @@ def has_no_e(file):
             
     percentage=(count/total)*100
     print(percentage)
-
 if __name__ == "__main__":
     fin=open('words.txt')
     has_no_e(fin)
+
