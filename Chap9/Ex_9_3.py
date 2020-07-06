@@ -2,7 +2,6 @@ def avoids(word, forbidden):
     """Trả về false nếu trong word có bất kỳ 
     chữ bị cấm nào trong chuỗi forbidden
     """
-    count=0
     for letter in word:
         if letter in forbidden:
             return False
